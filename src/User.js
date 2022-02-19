@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function User({formData}) {
+export default function User({}) {
   return (
     <div>
 
 
-   User:{formData.firstName}
+
 
 
     </div>
