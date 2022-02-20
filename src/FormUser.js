@@ -16,7 +16,7 @@ export default function FormUser() {
   const [gender, setGender] = useState('')
   const searchUser = async (user) => {
     const token =
-      'AAAAAAAAAAAAAAAAAAAAAPoQZQEAAAAAiehjJSsU8kTcXUqQ%2FX%2BtpwbbxpQ%3DaEvdEsZayIlBNTJ9jScl2RmKF7LP8Kaz54wVbrpbjQrNW36r3N'
+      ''
     const response = await axios
       .post(
         'https://api.twitter.com/1.1/users/lookup.json',
