@@ -5,10 +5,10 @@ import './index.css'
 import App from './App'
 import User from './User'
 import reportWebVitals from './reportWebVitals'
-import ImageContext from './imageContext'
+import { ImageContextProvider } from './imageContext'
 
 ReactDOM.render(
-  <ImageContext.Provider value={'image'}>
+  <ImageContextProvider>
     <BrowserRouter>
       <React.StrictMode>
         <Routes>
@@ -18,7 +18,7 @@ ReactDOM.render(
         </Routes>
       </React.StrictMode>
     </BrowserRouter>
-  </ImageContext.Provider>,
+  </ImageContextProvider>,
   document.getElementById('root')
 )
 

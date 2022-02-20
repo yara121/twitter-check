@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { Form, Label, Input, FormGroup, Button } from 'reactstrap'
 import User from './User.js'
 import Header from './Header'
-import ImageContext from './imageContext'
+import { Consumer } from './imageContext'
 
 export default function FormUser() {
   const [name, setName] = useState('')
@@ -167,4 +167,3 @@ export default function FormUser() {
     </div>
   )
 }
-

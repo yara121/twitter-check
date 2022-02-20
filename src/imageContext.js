@@ -1,6 +1,11 @@
-import React from 'react'
+import React ,{Component}from 'react'
+const { Provider, Consumer } = React.createContext()
 const ImageContext = React.createContext()
 
-var image=localStorage.getItem(image)
+class ImageContextProvider extends Component {
+  render() {
+    return <Provider value={'image'}>{this.props.children}</Provider>
+  }
+}
 
-export default ImageContext
+export { ImageContextProvider, Consumer as ImageContextConsumer }
