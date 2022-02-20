@@ -5,10 +5,11 @@ import './index.css'
 import App from './App'
 import User from './User'
 import reportWebVitals from './reportWebVitals'
-import { ImageContextProvider } from './imageContext'
+// import { Provider } from 'react-redux'
+// import store from './store'
 
 ReactDOM.render(
-  <ImageContextProvider>
+  // <Provider store={store}>
     <BrowserRouter>
       <React.StrictMode>
         <Routes>
@@ -18,7 +19,8 @@ ReactDOM.render(
         </Routes>
       </React.StrictMode>
     </BrowserRouter>
-  </ImageContextProvider>,
+    // </Provider>
+  ,
   document.getElementById('root')
 )
 

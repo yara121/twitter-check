@@ -3,9 +3,7 @@ import React, { useState } from 'react'
 import './FormUser.css'
 import { Link } from 'react-router-dom'
 import { Form, Label, Input, FormGroup, Button } from 'reactstrap'
-import User from './User.js'
-import Header from './Header'
-import { Consumer } from './imageContext'
+import axios from 'axios'
 
 export default function FormUser() {
   const [name, setName] = useState('')
@@ -16,14 +14,33 @@ export default function FormUser() {
   const [phone, setPhone] = useState('')
   const [image, setImage] = useState('')
   const [gender, setGender] = useState('')
+  const searchUser = async (user) => {
+    const token =
+      'AAAAAAAAAAAAAAAAAAAAAPoQZQEAAAAAiehjJSsU8kTcXUqQ%2FX%2BtpwbbxpQ%3DaEvdEsZayIlBNTJ9jScl2RmKF7LP8Kaz54wVbrpbjQrNW36r3N'
+    const response = await axios
+      .post(
+        'https://api.twitter.com/1.1/users/lookup.json',
+
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+          params: { name: user },
+        }
+      )
+      .then((response) => {
+        console.log(response.data)
+        console.log(response.status)
+        console.log(response.statusText)
+        console.log(response.headers)
+        console.log(response.config)
+      })
+  }
 
   function handleChangeTwo(e) {
     setImage(e.target.value)
-    image = `http://localhost:8080/${e.target.value}`
-    getBase64(image).then((base64) => {
-      localStorage['fileBase64'] = base64
-      console.debug('file stored', base64)
-    })
+    // dispatch(saveImage(e.target.value))
   }
   function handleChange(e) {
     e.preventDefault()
@@ -47,6 +64,7 @@ export default function FormUser() {
     localStorage.setItem('email', email)
     localStorage.setItem('image', image)
     localStorage.setItem('gender', gender)
+    searchUser(user)
   }
   return (
     <div>
