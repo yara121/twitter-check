@@ -16,6 +16,8 @@ import Header from './Header'
 
 export default function User() {
   const [twitter, setTwitter] = useState(false)
+  const [tweet, setTweet] = useState('')
+  const [proilePic, setProfilePic] = useState('')
 
   const firstName = localStorage.getItem('name')
   const lastName = localStorage.getItem('lastName')
@@ -40,11 +42,14 @@ export default function User() {
           <h4>email:{email}</h4>
           <img src={image} />
         </div>
-        <div>
-          <h4>User has a twitter account </h4>
+        {twitter && (
+          <div>
+            <h4>User: {{ user }} </h4>
 
-          <h4>Last Tweet:</h4>
-        </div>
+            <h4>Last Tweet:{{ tweet }}</h4>
+            <img src={{ proilePic }}></img>
+          </div>
+        )}
       </div>
     </div>
   )
