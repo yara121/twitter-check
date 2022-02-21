@@ -4,6 +4,7 @@ import './FormUser.css'
 import { Link } from 'react-router-dom'
 import { Form, Label, Input, FormGroup, Button } from 'reactstrap'
 import axios from 'axios'
+import cors from 'cors'
 
 export default function FormUser() {
   const [name, setName] = useState('')
@@ -14,33 +15,26 @@ export default function FormUser() {
   const [phone, setPhone] = useState('')
   const [image, setImage] = useState('')
   const [gender, setGender] = useState('')
+
   const searchUser = async (user) => {
     const token =
       ''
-    const response = await axios
-      .post(
-        'https://api.twitter.com/1.1/users/lookup.json',
 
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
-          params: { name: user },
-        }
-      )
-      .then((response) => {
-        console.log(response.data)
-        console.log(response.status)
-        console.log(response.statusText)
-        console.log(response.headers)
-        console.log(response.config)
-      })
+    axios.defaults.headers.common = { Authorization: `Bearer ${token}` }
+    const response = await axios.get(
+      `https://api.twitter.com/2/users/by/username/${user}`
+    )
+
+    console.log(response)
   }
 
   function handleChangeTwo(e) {
     setImage(e.target.value)
-    // dispatch(saveImage(e.target.value))
+    image = e.target.value
+    const reader = new FileReader()
+    reader.readAsDataURL(image)
+    reader.onload = (e) => {}
+    console.log(e.target.result)
   }
   function handleChange(e) {
     e.preventDefault()
