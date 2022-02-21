@@ -42,14 +42,6 @@ export default function FormUser() {
     e.preventDefault()
     setGender(e.target.value)
   }
-  const getBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader()
-      reader.onload = () => resolve(reader.result)
-      reader.onerror = (error) => reject(error)
-      reader.readAsDataURL(file)
-    })
-  }
 
   function handleSubmit(e) {
     localStorage.setItem('name', name)
