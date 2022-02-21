@@ -1,17 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {
-  Alert,
-  CardGroup,
-  CardTitle,
-  Container,
-  Label,
-  Row,
-  Col,
-  Card,
-  CardBody,
-  CardText,
-  CardImg,
-} from 'reactstrap'
+
 import Header from './Header'
 
 export default function User() {
