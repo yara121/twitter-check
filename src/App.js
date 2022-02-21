@@ -8,9 +8,9 @@ import './App.css'
 
 function App() {
   return (
-    <div className='App'>
-       <Header />
-     <FormUser />
+    <div className='App' className='grey'>
+      <Header />
+      <FormUser />
     </div>
   )
 }

@@ -35,7 +35,7 @@ export default function FormUser() {
     const reader = new FileReader()
     reader.readAsDataURL(file)
     reader.onload = (e) => {
-      let base64String = reader.result.replace('data:', '').replace(/^.+,/, '')
+      let base64String = reader.result
       localStorage.setItem('image', base64String)
       console.log(base64String)
     }
@@ -65,7 +65,7 @@ export default function FormUser() {
     searchUser(user)
   }
   return (
-    <div>
+    <div className='grey'>
       <div id='form'>
         <Form col={6} className='form'>
           <FormGroup>

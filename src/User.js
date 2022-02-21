@@ -25,28 +25,25 @@ export default function User() {
   useEffect(() => {
     alert(`Hello, ${firstName} ${lastName}`)
   })
+  console.log(image)
 
   const url = `https://api.twitter.com/2/users/by/username/${user}`
 
   return (
-    <div>
+    <div className='grey'>
       <Header />
       <div className='flex-container'>
         <div>
-          
-            <h2>
-              Name:{firstName} {lastName}
-            </h2>
-            <h2>email:{email}</h2>
-            <img src= {image} />
-          
+          <h4>
+            Name:{firstName} {lastName}
+          </h4>
+          <h4>email:{email}</h4>
+          <img src={image} />
         </div>
         <div>
-          
-            <h2>User has a twitter account </h2>
+          <h4>User has a twitter account </h4>
 
-            <h2>Last Tweet:</h2>
-          
+          <h4>Last Tweet:</h4>
         </div>
       </div>
     </div>

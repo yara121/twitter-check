@@ -5,12 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .flex-container {
   display: flex;
   justify-content: space-around;
@@ -33,4 +35,12 @@ header {
   padding: 50px;
   font-size: 40px;
   font-weight: 500;
+}
+img {
+  width: 100px;
+  height: 100px;
+}
+.grey {
+  background-color: #eff0e9;
+
 }
