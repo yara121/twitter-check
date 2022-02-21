@@ -17,9 +17,7 @@ export default function FormUser() {
   const [gender, setGender] = useState('')
 
   const searchUser = async (user) => {
-    const token =
-      'AAAAAAAAAAAAAAAAAAAAAPoQZQEAAAAAiehjJSsU8kTcXUqQ%2FX%2BtpwbbxpQ%3DaEvdEsZayIlBNTJ9jScl2RmKF7LP8Kaz54wVbrpbjQrNW36r3N'
-
+    const token = ''
     axios.defaults.headers.common = { Authorization: `Bearer ${token}` }
     const response = await axios.get(
       `https://api.twitter.com/2/users/by/username/${user}`
@@ -65,7 +63,7 @@ export default function FormUser() {
     searchUser(user)
   }
   return (
-    <div >
+    <div>
       <div id='form'>
         <Form col={6} className='form'>
           <FormGroup>
