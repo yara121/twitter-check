@@ -65,7 +65,7 @@ export default function FormUser() {
     searchUser(user)
   }
   return (
-    <div className='grey'>
+    <div >
       <div id='form'>
         <Form col={6} className='form'>
           <FormGroup>

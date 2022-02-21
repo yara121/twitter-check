@@ -32,7 +32,7 @@ export default function User() {
   const url = `https://api.twitter.com/2/users/by/username/${user}`
 
   return (
-    <div className='grey'>
+    <div>
       <Header />
       <div className='flex-container'>
         <div>
