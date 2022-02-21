@@ -30,11 +30,15 @@ export default function FormUser() {
 
   function handleChangeTwo(e) {
     setImage(e.target.value)
-    image = e.target.value
+    let file = e.target.files[0]
+
     const reader = new FileReader()
-    reader.readAsDataURL(image)
-    reader.onload = (e) => {}
-    console.log(e.target.result)
+    reader.readAsDataURL(file)
+    reader.onload = (e) => {
+      let base64String = reader.result.replace('data:', '').replace(/^.+,/, '')
+      localStorage.setItem('image', base64String)
+      console.log(base64String)
+    }
   }
   function handleChange(e) {
     e.preventDefault()
@@ -56,7 +60,7 @@ export default function FormUser() {
     localStorage.setItem('password', password)
     localStorage.setItem('phone', phone)
     localStorage.setItem('email', email)
-    localStorage.setItem('image', image)
+    // localStorage.setItem('image', image)
     localStorage.setItem('gender', gender)
     searchUser(user)
   }
